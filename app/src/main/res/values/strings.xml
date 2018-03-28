@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">AlbumApp</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_cuantas_faltan">Cuantas me faltan?</string>
+    <string name="action_repetidas">Repetidas</string>
+    <string name="action_album">Album</string>
+    <string name="action_resetear">Reset</string>
 </resources>
