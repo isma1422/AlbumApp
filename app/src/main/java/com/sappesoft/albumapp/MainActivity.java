@@ -1,10 +1,10 @@
 package com.sappesoft.albumapp;
 
+import android.app.ActionBar;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -98,12 +98,16 @@ public class MainActivity extends AppCompatActivity {
         if(id == R.id.action_album){
             albumAdapter.setMostrarRepetidas(false);
             albumAdapter.notifyDataSetChanged();
-            getActionBar().setTitle("Album");
+            getSupportActionBar().setTitle("Album");
         }
         if(id == R.id.action_repetidas){
             albumAdapter.setMostrarRepetidas(true);
             albumAdapter.notifyDataSetChanged();
-            getActionBar().setTitle("Repetidas");
+            getSupportActionBar().setTitle("Repetidas");
+        }
+        if(id == R.id.action_buscar){
+            Intent buscarIntent = new Intent(this,BuscarActivity.class);
+            startActivity(buscarIntent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -114,9 +118,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         if(albumAdapter.isMostrarRepetidas()){
-            getActionBar().setTitle("Repetidas");
+            getSupportActionBar().setTitle("Repetidas");
+
         }else{
-            getActionBar().setTitle("Album");
+            getSupportActionBar().setTitle("Album");
         }
 
         boolean[] savedAlbum = loadAlbum("Album",this);
@@ -126,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
         boolean[] savedRepetidas = loadAlbum("Repetidas",this);
         if(savedRepetidas != null)
             albumAdapter.setRepetidas(savedRepetidas);
+
+        albumAdapter.notifyDataSetChanged();
     }
 
     @Override
