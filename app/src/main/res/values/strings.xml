@@ -2,6 +2,10 @@
     <string name="app_name">AlbumApp</string>
     <string name="action_cuantas_faltan">Cuantas me faltan?</string>
     <string name="action_repetidas">Repetidas</string>
+    <string name="action_buscar">Buscar</string>
     <string name="action_album">Album</string>
     <string name="action_resetear">Reset</string>
+    <string name="action_agregar">Agregar</string>
+    <string name="action_reset">Reset</string>
+    <string name="title_activity_buscar">Buscar</string>
 </resources>

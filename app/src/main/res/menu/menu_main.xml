@@ -17,4 +17,9 @@
         android:id="@+id/action_repetidas"
         android:title="@string/action_repetidas"
         app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_buscar"
+        android:title="@string/action_buscar"
+        app:showAsAction="never"/>
 </menu>
